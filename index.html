@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>qassim@madji</title>
+</head>
+<body onload="startLoading()">
+
+<div id="preloader">
+    <div class="skull-animation">
+        <img src="skull.gif" alt="Hacker Skull" class="skull-image">
+    </div>
+    <div class="loading-bar"></div>
+</div>
+
+
+    <div id="main-content" style="display: none;">
+        <div class="banner">
+            qassim@madji:~$ RedTeam | PenTesting | Ethical Hacker | OffSec
+        </div>
+
+        <div class="terminal-box">
+            <p class="terminal-text">Systems have secrets... My eyes find them.</p>
+        </div>
+
+    </div>
+
+    <div class="terminal-box">
+    <h2><i class="fa-solid fa-bullseye"></i> Professional goals</h2>
+   
+        <p>Cybersecurity professional in training at TryHackMe, driven by the protection of sensitive systems and the prevention of cyber threats.
+        I aim to leverage my technical skills, versatile experience, and strong sense of rigor to contribute to national security.</p>
+    </div>
+
+    <div class="terminal-box">  
+        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <p><strong>2019-2020 :</strong> BTS CPRP
+        <br><strong>2025 :</strong> TryHackMe</p>
+    </div>
+
+    <div class="terminal-box">
+    <h2><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+        <p><strong>2019 :</strong> Internship at the Ministry of the Armed Forces
+        <br><strong>2020 :</strong> Internship at the Ministry of the Armed Forces</p>
+    </div>
+    
+    <div class="terminal-box">
+    <h2><i class="fa-solid fa-tools"></i> Skills</h2>
+    <ul>
+        <li><i class="fa-brands fa-python"></i> <i class="fa-brands fa-html5"></i> <i class="fa-brands fa-css3"></i> <i class="fa-solid fa-database"></i>
+            <strong>Programming languages :</strong> Python, SQL, HTML, CSS </li>
+        <li><i class="fa-solid fa-bug"></i><strong>Tools :</strong> Wireshark, Metasploit, Nessus, Burp Suite</li>
+        <li><i class="fa-solid fa-user-check"></i><strong>Soft skills :</strong> Teamwork, adaptability, problem-solving</li>
+        <li><i class="fa-solid fa-language"></i><strong>Language :</strong> English (fluent), Spanish (basic), Arabic (basic)</li>
+    </ul>
+        </div>
+    <div class="terminal-box">
+    <h2><i class="fa-solid fa-heart"></i> Interests</h2>
+    <ul>
+    <li><i class="fa-solid fa-person-hiking"></i>Hiking</li>
+    <li><i class="fa-solid fa-utensils"></i>Cooking</li>
+    <li><i class="fa-solid fa-laptop-code"></i>Cybersecurity</li>
+    </ul>
+    </div>
+
+    
+    <div class="info">
+        <h3>Contact</h3>
+    </div>
+    <div class="info">
+        <p><i class="fa-solid fa-envelope"></i> Email : <a href="mailto:qassim.madji@icloud.com">qassim.madji@icloud.com</a></p>
+        <p><i class="fa-solid fa-phone"></i> Phone : <a href="tel:+33612345678">06 12 34 56 78</a></p>
+        <p><i class="fa-brands fa-linkedin"></i> LinkedIn : <a href="https://www.linkedin.com/in/qassim-madji/">Qassim Madji</a></p>
+        <p><i class="fa-solid fa-globe"></i> TryHackMe : <a href="https://www.tryhackme.com/">tryhackme.com</a></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let preloader = document.getElementById("preloader");
+            let mainContent = document.getElementById("main-content");
+            let skullAnimation = document.querySelector(".skull-animation");
+            let loadingBar = document.querySelector(".loading-bar");
+        
+            
+            let skullSound = new Audio("skull-sound.mp3"); 
+            skullSound.volume = 1.0;
+        
+            function playSkullSound() {
+                skullSound.play().catch(error => console.error("Lecture du son bloquée :", error));
+                document.removeEventListener("click", playSkullSound);
+                document.removeEventListener("keydown", playSkullSound);
+            }
+        
+            
+            document.addEventListener("click", playSkullSound);
+            document.addEventListener("keydown", playSkullSound);
+        
+            if (!preloader || !mainContent || !skullAnimation || !loadingBar) {
+                console.error("Un élément du préchargement est introuvable.");
+                return;
+            }
+        
+            
+            setTimeout(() => {
+                loadingBar.style.opacity = "0"; 
+                setTimeout(() => {
+                    loadingBar.style.display = "none";
+        
+                    
+                    playSkullSound();
+                    skullAnimation.style.display = "flex";
+        
+                    setTimeout(() => {
+                        skullAnimation.style.opacity = "0";
+                        setTimeout(() => {
+                            skullAnimation.style.display = "none"; 
+                            preloader.style.display = "none"; 
+                            mainContent.style.display = "block"; 
+                            mainContent.classList.add("loaded");
+        
+                            
+                            document.querySelectorAll(".terminal-box, h2").forEach(el => {
+                                el.style.opacity = "1";
+                                el.style.transform = "translateY(0)";
+                            });
+        
+                        }, 300);
+                    }, 1500); 
+        
+                }, 300); 
+            }, 1000); 
+        });
+        </script>
+        
+              
+    <footer>
+        <style>
+            footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 10px;
+                margin: auto;
+            }
+            
+        </style>
+        Qassim Madji - 2025
+    </footer>
+
+</body>
+</html>
