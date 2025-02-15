@@ -86,15 +86,12 @@
             let skullSound = new Audio("skull-sound.mp3"); 
             skullSound.volume = 1.0;
         
-            function playSkullSound() {
-                skullSound.play().catch(error => console.error("Lecture du son bloquée :", error));
-                document.removeEventListener("click", playSkullSound);
-                document.removeEventListener("keydown", playSkullSound);
-            }
-        
-            
-            document.addEventListener("click", playSkullSound);
-            document.addEventListener("keydown", playSkullSound);
+    function playSkullSound() {
+        skullSound.play().catch(error => console.warn("Lecture du son bloquée par le navigateur :", error));
+    }
+
+    
+    playSkullSound();
         
             if (!preloader || !mainContent || !skullAnimation || !loadingBar) {
                 console.error("Un élément du préchargement est introuvable.");
